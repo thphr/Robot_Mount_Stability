@@ -1,0 +1,18 @@
+PI=3.1415
+movej([-PI/2,-PI/2, 0,0,PI/2,PI/2])
+s=0
+stims = 200
+
+amp = PI*100
+freq = 250
+t=1/(2*freq)
+
+speedj([0, -PI,0,0,0,0], amp/2, t)
+while s < stims:
+	speedj([0, PI,0,0,0,0], amp, t)
+	speedj([0, -PI,0,0,0,0], amp, t)
+	s=s+1
+end
+stopj(10)
+
+halt
